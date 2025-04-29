@@ -6,6 +6,8 @@ typedef struct {
     float field;
     float pib;  
     int tourist_spot_numbers;
+    float population_density;
+    float pib_capital;
 } Card;
 
 // função que recebe a struct de carta para interagir com usuario e adicionar a carta.
@@ -21,14 +23,18 @@ void add_attributes(Card *new_card) {
 
     printf("Digite a quantidade de pontos turisticos: \n");
     scanf("%d", &new_card->tourist_spot_numbers);
+    new_card->population_density = new_card->population / new_card->field;
+    new_card->pib_capital = new_card->pib / new_card->population;
 }
 
 void viwer(int play, Card *card) {
-    printf("A carta %d tem: \n", play);
-    printf("População: %f \n", card->population);
-    printf("Área : %f \n", card->field);
-    printf("PIB : %f \n", card->pib);
+    printf("carta %d \n \n", play);
+    printf("População: %2.f \n", card->population);
+    printf("Área : %2.f \n", card->field);
+    printf("PIB : %2.f \n", card->pib);
     printf("Pontos turisticos : %d  \n", card->tourist_spot_numbers);
+    printf("Densidade populacional: %2.f \n", card->population_density);
+    printf("PIB por capital: %2.f \n", card->pib_capital);
 }
 
 int main() {
