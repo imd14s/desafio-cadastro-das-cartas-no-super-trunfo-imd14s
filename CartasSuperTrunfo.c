@@ -34,7 +34,7 @@ void add_attributes(Card *new_card) {
 // função responsavel de exibir os atributos.
 void viwer(int play, Card *card) {
     printf("carta %d \n \n", play);
-    printf("População: %0.2lu \n", card->population);
+    printf("População: %lu \n", card->population);
     printf("Área : %0.2f \n", card->field);
     printf("PIB : %0.2f \n", card->pib);
     printf("Pontos turisticos : %d  \n", card->tourist_spot_numbers);
